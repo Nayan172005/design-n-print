@@ -1,0 +1,11 @@
+Design N Print Logo License
+
+Copyright (c) 2025 Nayan Sharma
+
+The "Design N Print" logo used in this repository is a proprietary asset
+and is not covered under the open-source project license.
+
+Permission is NOT granted to use, reproduce, modify, or distribute
+the logo in any form without explicit written consent from the owner.
+
+For licensing inquiries, please contact: nayan.sharma172005@gmail.com

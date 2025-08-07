@@ -1,8 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import logo from '../assets/Logo.png';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
+  const handleGetStarted = () => {
+    navigate('/samples');
+  };
+
   return (
     <section className="hero">
       <div className="hero-content">
@@ -50,7 +57,7 @@ const Hero = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 1.1 }}
             >
-              <button className="cta-button pulse">Get Started</button>
+              <button className="cta-button pulse" onClick={handleGetStarted}>Get Started</button>
             </motion.div>
           </motion.div>
 

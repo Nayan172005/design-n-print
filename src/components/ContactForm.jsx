@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import api from '../api/client';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -19,20 +20,24 @@ const ContactForm = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically send the data to your backend
-    console.log('Form submitted:', formData);
-    setSubmitted(true);
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      message: ''
-    });
-    
-    // Reset submission status after 3 seconds
-    setTimeout(() => setSubmitted(false), 3000);
+
+    try {
+      await api.post('/contact', formData);
+      setSubmitted(true);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+
+      setTimeout(() => setSubmitted(false), 3000);
+    } catch (err) {
+      console.error('Contact form submission error:', err);
+      alert('Something went wrong. Please try again.');
+    }
   };
 
   return (

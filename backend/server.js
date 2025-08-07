@@ -8,6 +8,7 @@ const cors = require('cors');
 const connectDB = require('./config/db');
 const errorHandler = require('./middleware/error');
 const updateOrderProgress = require('./jobs/orderProgressUpdater');
+const contactRoutes = require('./routes/contact');
 
 // Verify environment variables
 console.log('Environment:', process.env.NODE_ENV);
@@ -46,6 +47,7 @@ const loadRoutes = () => {
     app.use('/api/v1/orders', orderRoutes);
     app.use('/api/v1/cart', cartRoutes);
     app.use('/api/v1/products', productRoutes);
+    app.use('/api/v1/contact', contactRoutes);
 
     console.log('All routes loaded successfully');
   } catch (err) {

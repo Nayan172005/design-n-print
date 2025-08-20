@@ -4,13 +4,6 @@
 
 ---
 
-## 🚧 Project Status
-
-> This project is currently under active development.  
-> Core features like cart system, custom order placement, contact form, and real-time order tracking are already functional. Further features like payments and moderation are in progress.
-
----
-
 ## 🎯 Features (Completed ✅ / Planned 🕐)
 
 | Feature | Status |

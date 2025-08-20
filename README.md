@@ -1,4 +1,4 @@
-# 🖨️ Design & Print – Custom Print Ordering Platform (In Progress)
+# 🖨️ Design & Print – Custom Print Ordering e-Commerce Platform 
 
 **Design & Print** is a full-stack web application that enables users to upload custom print files, place print orders, and track their progress in real-time. Built with a clean modular structure using **React**, **Node.js**, **Express**, and **MongoDB**, this system is under active development with secure authentication, admin functionality, and payment integration in the pipeline.
 
@@ -11,7 +11,7 @@
 
 ---
 
-## 🎯 Features (Completed ✅ / In Progress 🔄 / Planned 🕐)
+## 🎯 Features (Completed ✅ / Planned 🕐)
 
 | Feature | Status |
 |--------|--------|
@@ -22,8 +22,7 @@
 | Track Order Status (with live progress bar) | ✅ Done |
 | View Past Orders with Detail Modal | ✅ Done |
 | Contact Form with Email Auto-Response | ✅ Done |
-| Moderator Dashboard for Reviews & Products | 🔄 In Progress |
-| Admin Order Management Panel | 🕐 Planned |
+| Moderator Dashboard for Products and Order Management | 🕐 Planned |
 | Payment Gateway Integration | 🕐 Planned |
 | File Storage (Uploads + MongoDB URL) | ✅ Done |
 
@@ -63,7 +62,8 @@ design-n-print/
 │ ├── routes/                   # API routes
 │ ├── scripts/                  # Utilities/scripts
 │ ├── utils/                    # Helper functions (mailer, validators)
-│ └── server.js                 # Entry point for backend
+│ ├── server.js                 # Entry point for backend
+│ └── .env.example # Example environment variables file
 │
 ├── public/                     # Static frontend assets
 │
@@ -84,6 +84,56 @@ design-n-print/
 ├── package.json
 └── package-lock.json
 ```
+---
+
+## ⚙️ Installation & Setup
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Nayan172005/design-n-print.git
+cd design-n-print
+```
+
+### 2. Environment Variables
+- Navigate to the `backend/` folder.
+- Copy the example environment file:
+```bash
+cp backend/.env.example backend/.env
+```
+- Fill in your own credentials for:
+  - MongoDB connection string
+  - JWT secret
+  - Email credentials (if used)
+
+### 3. Install Dependencies
+- Install frontend dependencies:
+```bash
+cd frontend
+npm install
+```
+
+- Install backend dependencies:
+```bash
+cd ../backend
+npm install
+```
+
+### 4. Run the Application
+- Start backend server:
+```bash
+node server.js
+```
+
+- Start frontend React app (open a new terminal):
+```bash
+cd frontend
+npm start
+```
+
+By default:
+- Backend runs on **http://localhost:5000**
+- Frontend runs on **http://localhost:3000**
+
 ---
 
 ## 🧑‍💻 Author

@@ -37,7 +37,7 @@ const loadRoutes = () => {
     app.use('/api/v1/auth', authRoutes);
 
     // Other routes
-    const dashboardRoutes = require('./routes/dashboard');
+    const dashboardRoutes = require('./routes/Dashboard');
     const orderRoutes = require('./routes/orders');
     const cartRoutes = require('./routes/cart');
     const productRoutes = require('./routes/product');

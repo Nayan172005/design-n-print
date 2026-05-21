@@ -11,7 +11,7 @@ const CartPage = () => {
   const [isLoading, setIsLoading] = useState(true);
   const navigate = useNavigate();
 
-  const fetchCart = async () => {
+  const fetchCart = React.useCallback(async () => {
     setIsLoading(true);
     if (!isAuthenticated) {
       const savedCart = localStorage.getItem('cartItems');
@@ -34,12 +34,11 @@ const CartPage = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, []);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     fetchCart();
-  }, [isAuthenticated]);
+  }, [fetchCart, isAuthenticated]);
 
   const syncCartWithBackend = async (updatedCart) => {
     if (!isAuthenticated) return;

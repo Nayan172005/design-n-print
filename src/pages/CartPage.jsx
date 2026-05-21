@@ -34,7 +34,7 @@ const CartPage = () => {
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [isAuthenticated]);
 
   useEffect(() => {
     fetchCart();

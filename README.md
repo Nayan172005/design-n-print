@@ -1,142 +1,170 @@
-# 🖨️ Design & Print – Custom Print Ordering e-Commerce Platform 
+# Design & Print – Custom Print Ordering Platform
 
-**Design & Print** is a full-stack web application that enables users to upload custom print files, place print orders, and track their progress in real-time. Built with a clean modular structure using **React**, **Node.js**, **Express**, and **MongoDB**, this system is under active development with secure authentication, admin functionality, and payment integration in the pipeline.
+Design & Print is a full-stack custom print ordering platform that allows users to upload print files, browse products, place custom orders, and track order progress in real time. The application is built using the MERN stack with a modular architecture focused on scalability, maintainability, and user experience.
 
----
-
-## 🎯 Features (Completed ✅ / Planned 🕐)
-
-| Feature | Status |
-|--------|--------|
-| User Registration & Login (JWT) | ✅ Done |
-| Product Catalog + Category Filter | ✅ Done |
-| Add to Cart (Logged-in Users) | ✅ Done |
-| Custom Order Placement | ✅ Done |
-| Track Order Status (with live progress bar) | ✅ Done |
-| View Past Orders with Detail Modal | ✅ Done |
-| Contact Form with Email Auto-Response | ✅ Done |
-| Moderator Dashboard for Products and Order Management | 🕐 Planned |
-| Payment Gateway Integration | 🕐 Planned |
-| File Storage (Uploads + MongoDB URL) | ✅ Done |
+The platform includes secure authentication, order management, product browsing, cart functionality, email automation, and dynamic order tracking.
 
 ---
 
-## 📩 Contact Form Feature
+## Features
 
-- Contact messages are saved in MongoDB.
-- Auto-email reply is sent using Nodemailer + Gmail SMTP (App Password).
-- Success animation after submission.
-
----
-
-## 🛠️ Tech Stack
-
-| Layer      | Tools                             |
-|------------|-----------------------------------|
-| Frontend   | React.js, Framer Motion, Axios    |
-| Backend    | Node.js, Express.js               |
-| Database   | MongoDB, Mongoose                 |
-| Auth       | JWT-based Authentication          |
-| Mailing    | Nodemailer (Gmail SMTP)           |
-| Tools      | Postman, VS Code, Git             |
+* JWT-based User Authentication
+* Product Catalog with Category Filtering
+* Cart Management for Logged-in Users
+* Custom Print Order Placement
+* Real-Time Order Status Tracking
+* Order History with Detailed View
+* Contact Form with Automated Email Responses
+* File Upload Support with Database Storage
+* Responsive User Interface with Smooth Animations
+* REST API-based Backend Architecture
 
 ---
 
-## 🗂️ Folder Structure
+## Contact & Notification System
+
+The platform includes an integrated contact system where:
+
+* User queries are stored in MongoDB
+* Automated confirmation emails are sent using Nodemailer
+* Gmail SMTP integration is used for email delivery
+* Success feedback is displayed after submission
+
+---
+
+## Tech Stack
+
+| Layer          | Technologies                   |
+| -------------- | ------------------------------ |
+| Frontend       | React.js, Axios, Framer Motion |
+| Backend        | Node.js, Express.js            |
+| Database       | MongoDB, Mongoose              |
+| Authentication | JWT Authentication             |
+| Mailing        | Nodemailer (Gmail SMTP)        |
+| Tools          | Git, GitHub, VS Code, Postman  |
+
+---
+
+## Project Structure
 
 ```bash
 design-n-print/
 ├── backend/
-│ ├── config/                   # DB config
-│ ├── controllers/              # Request handlers
-│ ├── jobs/                     # Scheduled/cron jobs
-│ ├── middleware/               # Auth, error handling
-│ ├── models/                   # Mongoose schemas
-│ ├── routes/                   # API routes
-│ ├── scripts/                  # Utilities/scripts
-│ ├── utils/                    # Helper functions (mailer, validators)
-│ ├── server.js                 # Entry point for backend
-│ └── .env.example # Example environment variables file
+│   ├── config/
+│   ├── controllers/
+│   ├── jobs/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   ├── scripts/
+│   ├── utils/
+│   ├── server.js
+│   └── .env.example
 │
-├── public/                     # Static frontend assets
+├── public/
 │
 ├── src/
-│ ├── api/                      # API call logic
-│ ├── components/               # Reusable UI components
-│ │ ├── auth/                   # Login/Register modals
-│ │ └── ...                     # Navbar, Footer, Forms etc.
-│ ├── images/                   # UI illustrations/images
-│ ├── pages/                    # Page-level components
-│ ├── styles/                   # CSS Modules
-│ └── App.js                    # App entry
+│   ├── api/
+│   ├── components/
+│   ├── images/
+│   ├── pages/
+│   ├── styles/
+│   └── App.js
 │
 ├── .gitignore
-├── README.md
-├── LICENSE                     #(MIT License for code)
-├── LOGO_LICENSE.txt            #(Copyright restriction for logo)
+├── LICENSE
+├── LOGO_LICENSE.txt
 ├── package.json
-└── package-lock.json
+├── package-lock.json
+└── README.md
 ```
+
 ---
 
-## ⚙️ Installation & Setup
+## Installation & Setup
 
-### 1. Clone the Repository
+### Clone Repository
+
 ```bash
 git clone https://github.com/Nayan172005/design-n-print.git
 cd design-n-print
 ```
 
-### 2. Environment Variables
-- Navigate to the `backend/` folder.
-- Copy the example environment file:
+---
+
+### Configure Environment Variables
+
+Navigate to the backend directory and create a `.env` file using the example template:
+
 ```bash
 cp backend/.env.example backend/.env
 ```
-- Fill in your own credentials for:
-  - MongoDB connection string
-  - JWT secret
-  - Email credentials (if used)
 
-### 3. Install Dependencies
-- Install frontend dependencies:
+Configure the required credentials:
+
+* MongoDB Connection URI
+* JWT Secret
+* Email Credentials
+
+---
+
+### Install Dependencies
+
+Install frontend dependencies:
+
 ```bash
-cd frontend
 npm install
 ```
 
-- Install backend dependencies:
+Install backend dependencies:
+
 ```bash
-cd ../backend
+cd backend
 npm install
 ```
 
-### 4. Run the Application
-- Start backend server:
+---
+
+### Run the Application
+
+Start backend server:
+
 ```bash
-node server.js
+cd backend
+npm run dev
 ```
 
-- Start frontend React app (open a new terminal):
+Start frontend application:
+
 ```bash
-cd frontend
 npm start
 ```
 
-By default:
-- Backend runs on **http://localhost:5000**
-- Frontend runs on **http://localhost:3000**
+---
+
+## Default Ports
+
+* Frontend: `http://localhost:3000`
+* Backend: `http://localhost:5000`
 
 ---
 
-## 🧑‍💻 Author
+## Author
 
-[Nayan Sharma](https://github.com/Nayan172005)
+Nayan Sharma
+
+GitHub: https://github.com/Nayan172005
 
 ---
 
-### ⚠️ Logo Usage Policy
+## License
 
-The **Design N Print** logo is a proprietary asset owned by Nayan Sharma.  
-It is **not licensed for reuse, redistribution, or modification**.  
-Unauthorized usage in any form is strictly prohibited.
+This project is licensed under the MIT License.
+
+---
+
+## Logo Usage Policy
+
+The Design & Print logo is a proprietary asset owned by Nayan Sharma.
+
+The logo may not be reused, modified, redistributed, or reproduced without explicit permission from the owner.

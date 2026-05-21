@@ -7,27 +7,27 @@ import Dashboard from './auth/Dashboard';
 const Order = () => {
   const { isAuthenticated } = useAuth();
   const [showLoginModal, setShowLoginModal] = useState(false);
-  const [cart, setCart] = useState([]);
+  // const [cart, setCart] = useState([]);
 
-const addToCart = (product) => {
-  const newCart = [...cart];
-  const existingItem = newCart.find(item => item.id === product.id);
+// const addToCart = (product) => {
+//   const newCart = [...cart];
+//   const existingItem = newCart.find(item => item.id === product.id);
   
-  if (existingItem) {
-    existingItem.quantity += 1;
-  } else {
-    newCart.push({ ...product, quantity: 1 });
-  }
+//   if (existingItem) {
+//     existingItem.quantity += 1;
+//   } else {
+//     newCart.push({ ...product, quantity: 1 });
+//   }
   
-  setCart(newCart);
-  localStorage.setItem('cartItems', JSON.stringify(newCart));
-};
+//   setCart(newCart);
+//   localStorage.setItem('cartItems', JSON.stringify(newCart));
+// };
 
-const removeFromCart = (productId) => {
-  const newCart = cart.filter(item => item.id !== productId);
-  setCart(newCart);
-  localStorage.setItem('cartItems', JSON.stringify(newCart));
-};
+// const removeFromCart = (productId) => {
+//   const newCart = cart.filter(item => item.id !== productId);
+//   setCart(newCart);
+//   localStorage.setItem('cartItems', JSON.stringify(newCart));
+// };
 
   return (
     <motion.main

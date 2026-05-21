@@ -36,6 +36,7 @@ const CartPage = () => {
     }
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     fetchCart();
   }, [isAuthenticated]);

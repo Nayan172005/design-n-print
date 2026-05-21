@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import ContactForm from '../components/ContactForm';
-import Hero1 from '../components/Hero1';
+// import Hero1 from '../components/Hero1';
 import logo from '../assets/Logo.png';
 
 const Contact = () => {

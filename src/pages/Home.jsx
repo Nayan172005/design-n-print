@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Hero from '../components/Hero';
 import Services from '../components/Services';
-import SamplesGallery from '../components/SamplesGallery';
+// import SamplesGallery from '../components/SamplesGallery';
 
 const Home = () => {
   return (

@@ -8,22 +8,41 @@ exports.getCart = asyncHandler(async (req, res) => {
   res.status(200).json({ success: true, data: cart });
 });
 
-exports.addToCart = asyncHandler(async (req, res) => {
+exports.addToCart = asyncHandler(async (req, res, next) => {
   const { productId, quantity } = req.body;
-  if (!productId || !quantity) throw new ErrorResponse('Missing fields', 400);
+
+  if (!productId || !quantity) {
+    return next(new ErrorResponse('Missing fields', 400));
+  }
 
   let cart = await Cart.findOne({ user: req.user.id });
-  if (!cart) cart = new Cart({ user: req.user.id, items: [] });
 
-  const idx = cart.items.findIndex(i => i.product.toString() === productId);
+  if (!cart) {
+    cart = new Cart({
+      user: req.user.id,
+      items: []
+    });
+  }
+
+  const idx = cart.items.findIndex(
+    i => i.product && i.product.toString() === productId
+  );
+
   if (idx > -1) {
     cart.items[idx].quantity = quantity;
   } else {
-    cart.items.push({ product: productId, quantity });
+    cart.items.push({
+      product: productId,
+      quantity
+    });
   }
 
   await cart.save();
-  res.status(200).json({ success: true, data: cart });
+
+  res.status(200).json({
+    success: true,
+    data: cart
+  });
 });
 
 exports.removeFromCart = asyncHandler(async (req, res, next) => {

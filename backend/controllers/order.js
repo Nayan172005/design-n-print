@@ -1,5 +1,6 @@
 const Order = require('../models/Order');
 const asyncHandler = require('../middleware/asyncHandler');
+const ErrorResponse = require('../utils/errorResponse');
 
 exports.placeOrder = asyncHandler(async (req, res) => {
   const { items, total } = req.body;

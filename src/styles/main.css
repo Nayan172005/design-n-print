@@ -522,7 +522,7 @@ h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
 
 .category-btn {
   background: rgba(26, 26, 35, 0.7);
-  border: 1px solid var(--medium-gray);
+  border: 0px solid var(--medium-gray);
   color: var(--light-gray);
   padding: 0.8rem 2rem;
   border-radius: 50px;
@@ -589,6 +589,7 @@ h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 16px;
   transition: var(--transition);
 }
 

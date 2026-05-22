@@ -26,7 +26,7 @@ exports.addToCart = asyncHandler(async (req, res) => {
   res.status(200).json({ success: true, data: cart });
 });
 
-exports.removeFromCart = asyncHandler(async (req, res) => {
+exports.removeFromCart = asyncHandler(async (req, res, next) => {
   let cart = await Cart.findOne({ user: req.user.id });
   if (!cart) return next(new ErrorResponse('Cart not found', 404));
   cart.items = cart.items.filter(item => item._id.toString() !== req.params.itemId);
@@ -34,7 +34,7 @@ exports.removeFromCart = asyncHandler(async (req, res) => {
   res.status(200).json({ success: true, data: cart });
 });
 
-exports.clearCart = asyncHandler(async (req, res) => {
+exports.clearCart = asyncHandler(async (req, res, next) => {
   let cart = await Cart.findOne({ user: req.user.id });
   if (!cart) return next(new ErrorResponse('Cart not found', 404));
   cart.items = [];
